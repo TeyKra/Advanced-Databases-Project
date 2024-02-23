@@ -1,0 +1,38 @@
+1-Entités et Attributs :
+
+Spectacle : Cette entité représente les spectacles produits par la compagnie théâtrale avec les attributs ID Spectacle (clé primaire), nom Spectacle et coûts de production.
+
+Représentation : Correspond aux représentations individuelles d'un spectacle. Ses attributs sont ID représentation (clé primaire), durée, salaires et date de début.
+
+Employé : Détaille les employés de la compagnie avec ID employé (clé primaire), nom, type d'emploi et salaire.
+
+Compagnie_Theatrale : Représente la compagnie elle-même, avec ID Compagnie Theatrale (clé primaire), nom_Compagnie_Theatrale et budget.
+
+Théâtre : Représente les théâtres où les spectacles peuvent être joués, avec ID théâtre (clé primaire), capacité, nom théâtre, frais de déplacement et adresse.
+
+Spectateur : Représente les clients de la compagnie théâtrale, avec ID spectateur (clé primaire), email et statut.
+
+Billet : Représente les billets vendus pour les représentations avec ID Billet (clé primaire), tarif normal, tarif réduit, date d'achat et date d'accès.
+
+Subvention : Détaille les subventions reçues, avec ID Subvention (clé primaire), date de début, nom donateur, somme donnée, fréquence et date de fin.
+
+
+2-Relations et Cardinalités :
+
+Interpréter : Relie les entités Spectacle et Représentation. Un spectacle peut être interprété dans plusieurs représentations (0,n) et une représentation interprète un et un seul spectacle (1,1).
+
+Réaliser : Relie Représentation à Employé, indiquant qu'une représentation est réalisée par plusieurs employés (1,n) et un employé travaille sur une ou plusieurs représentations (0,n).
+
+Travailler : Relie Employé à Compagnie_Theatrale, montrant que chaque employé travaille pour une et une seule compagnie (1,1) et qu'une compagnie peut avoir plusieurs employés (1,n).
+
+Posséder : Relie Compagnie_Theatrale à Théâtre, indiquant qu'une compagnie possède un ou plusieurs théâtres (0,n) mais qu'un théâtre est possédé par une seule compagnie (0,1).
+
+Accéder : Relie Spectateur à Théâtre, indiquant qu'un spectateur peut accéder à plusieurs théâtres (0,n) et qu'un théâtre peut être accédé par plusieurs spectateurs (0,n).
+
+Acheter : Relie Spectateur à Billet, indiquant qu'un spectateur achète un ou plusieurs billets (0,n) et qu'un billet est acheté par un et un seul spectateur (1,1).
+
+Présenter : Relie Représentation à Théâtre, montrant qu'une représentation est présentée dans un seul théâtre (1,1) et qu'un théâtre peut présenter plusieurs représentations (0,n).
+
+Rémunérer : Relie Compagnie_Theatrale à Employé, indiquant que la compagnie rémunère ses employés (1,n) et qu'un employé est rémunéré par une et une seule compagnie (1,1).
+
+Verser : Relie Compagnie_Theatrale à Subvention, montrant que la compagnie reçoit des subventions (0,n) et qu'une subvention est versée à une seule compagnie (1,1).

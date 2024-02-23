@@ -1,0 +1,21 @@
+MLD:
+
+Theatre = (ID_theatre INT, capacite DECIMAL(4,0), nom_theatre VARCHAR(50), frais_deplacement DECIMAL(7,2), adresse VARCHAR(50));
+
+Compagnie_Theatrale = (ID_Compagnie_Theatrale INT, nom_Compagnie_Theatrale VARCHAR(50), budget DECIMAL(7,2), #ID_theatre);
+
+Spectateur = (ID_spectateur INT, email VARCHAR(50), statut VARCHAR(50));
+
+Employe = (ID_employe INT, nom VARCHAR(50), type_emploi VARCHAR(50), salaire DECIMAL(7,2), #ID_Compagnie_Theatrale);
+
+Subvention = (ID_Subvention INT, date_debut DATE, nom_donateur VARCHAR(50), somme_donnee DECIMAL(8,2), frequence INT, date_fin DATE, #ID_Compagnie_Theatrale);
+
+Spectacle = (ID_Spectacle INT, nom_Spectacle VARCHAR(50), couts_production DECIMAL(8,2));
+
+Billet = (ID_Billet INT, tarif_normal DECIMAL(5,2), tarif_reduit DECIMAL(5,2), date_achat DATE, date_accees DATE, #ID_spectateur, #ID_theatre);
+
+Représentation = (ID_representation INT, duree INT, salaires DECIMAL(8,2), date_debut DATETIME, #ID_theatre, #ID_Spectacle, #ID_Compagnie_Theatrale);
+
+Remunerer = (#ID_theatre, #ID_Compagnie_Theatrale, date_paiment DATE, total DECIMAL(7,2));
+
+
