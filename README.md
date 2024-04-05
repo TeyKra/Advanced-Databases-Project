@@ -1,4 +1,4 @@
-# Projet-Advanced-Databases
+# Advanced_Databases_M1_Project
 
 ## Objective
 
